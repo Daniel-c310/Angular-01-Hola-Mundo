@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col">
+    <h1 class="text-center">*ngIf</h1> <!--ngIf sirve para propiedades de cada objeto*-->
+    <hr>
+    <div *ngIf="mostrar" class="card text-white bg-danger mb-3" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title"> {{ frase.autor }}</h5>
+        <p class="card-text">{{ frase.mensaje }}.</p>
+      </div>
+    </div> <!-- abajo, para mostrar y ocultar el texto al hacer clik en el boton-->
+    <button (click)="mostrar = !mostrar"  class="btn btn-outline-primary btn-block" type="button" name="button">Mostrar/Ocultar</button>
+  </div>
+
+  <div class="col">
+    <h1 class="text-center">*ngFor</h1> <!-- ngFor sirve para arreglos -->
+    <hr>
+    <ul class="list-group"> <!--listar los personajes-->
+      <li *ngFor="let personaje of personajes; let i = index" class="list-group-item"> {{ i+1 }} - {{personaje}}</li>
+    </ul>
+  </div>
+</div>
